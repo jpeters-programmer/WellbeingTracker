@@ -7,17 +7,20 @@ namespace Model
         internal User() : base() {
             Name = string.Empty;
             Password = string.Empty;
-            this.TrackingSetup = new TrackingSetup(this);
+            Email = string.Empty;
+            TrackingSetup = new TrackingSetup(this);
         }
 
-        public User(string name, string password, TrackingSetup trackingSetup) : base()
+        public User(string name, string password, string email, TrackingSetup trackingSetup) : base()
         {
-            this.Name = name;
-            this.Password = password;
+            Name = name;
+            Password = password;            
+            Email = email;
             TrackingSetup = trackingSetup;
         }
         public string Name { get; set; }
         public string Password { get; set; }
+        public string Email {get;set;}
         public TrackingSetup TrackingSetup {get;set;}
     }
 }
