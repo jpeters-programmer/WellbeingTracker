@@ -1,0 +1,8 @@
+so far..
+    vscode - ctrl+p then task, space... allows you to run a task in tasks.json
+    vscode tasks have a dependsOn, and dependsOnSequence, which are very handy to run multiple tasks as one
+    csproj files can have arbitray item groups.  common items in them are 
+        <ProjectReference Include="..\Model\Model.csproj" />
+        <PackageReference Include="mapster" Version="7.2.0" />
+    postgresql
+        supports arrays, json natively with EF

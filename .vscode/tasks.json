@@ -1,0 +1,91 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/ConsoleHost/ConsoleHost.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/ConsoleHost/ConsoleHost.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/ConsoleHost/ConsoleHost.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "dto_cleanup",
+            "command": "dotnet",
+            "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}/DTO"
+            },
+            "args": [
+                "msbuild",                
+                "-t:CleanGenerated"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "dto_create",
+            "command": "dotnet",            
+            "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}/DTO"
+            },
+            "args": [
+                "msbuild",                
+                "-t:Mapster"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build_with_dto",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "dto_cleanup",
+                "dto_create",
+                "build"
+            ],
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        },
+        {
+            "label": "rebuild_dto",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "dto_cleanup",
+                "dto_create"
+            ],
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        }
+    ]
+}

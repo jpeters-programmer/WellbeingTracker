@@ -1,0 +1,1 @@
+A class that implements an interface will not have a Mapper generated for it.
