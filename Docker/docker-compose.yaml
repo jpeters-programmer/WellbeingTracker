@@ -1,0 +1,14 @@
+version: '3'
+services:
+  wellbeing-psql:
+    image: "jigs1982/wellbeingpostgres" # use latest 
+    environment:
+      - POSTGRES_DB=wellbeingdb
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=Simple22Simple   
+    volumes:
+      - wellbeing-psql-fs:/var/lib/postgresql/data/ 
+    ports:
+      - "5432:5432"
+volumes:
+  wellbeing-psql-fs:

@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ConsoleUI\ConsoleUI.csproj" />
+    <ProjectReference Include="..\Model.Postgres\Model.Postgres.csproj" />
   </ItemGroup>
 
   <ItemGroup>

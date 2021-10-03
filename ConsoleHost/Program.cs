@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using ConsoleUI.Extensions.DependencyInjection;
 using API.Extensions.DependencyInjection;
+using Model.Postgres.Extensions.DependencyInjection;
 
 namespace ConsoleHost
 {
@@ -11,7 +12,7 @@ namespace ConsoleHost
     {
         static Task Main(string[] args)
         {
-            using IHost host = CreateHostBuilder(args).Build();         
+            using IHost host = CreateHostBuilder(args).Build();              
             return host.RunAsync();
         }
 
@@ -20,6 +21,7 @@ namespace ConsoleHost
                 .ConfigureServices((_, services) => services                    
                     .AddHostedService<ConsoleUIHost>()
                     .AddApiServices()
+                    .AddWellbeingContext_Dev()
                     .AddConsoleUIServices());
     }
 }

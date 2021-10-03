@@ -6,10 +6,10 @@ using API;
 
 namespace ConsoleUI
 {
-    public class LoginAction : UIAction
+    public class SignupAction : UIAction
     {
         LoginController _loginController;
-        public LoginAction(IAnsiConsole console, LoginController loginController) : base(name: "Login", console)
+        public SignupAction(IAnsiConsole console, LoginController loginController) : base(name: "Login", console)
         {
             _loginController = loginController;
         }

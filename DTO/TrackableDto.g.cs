@@ -8,6 +8,6 @@ namespace DTO
         public string Name { get; set; }
         public FieldType FieldType { get; set; }
         public bool Inactive { get; set; }
-        public Guid Guid { get; set; }
+        public Guid Id { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace DTO
                 Name = p1.Name,
                 FieldType = p1.FieldType,
                 Inactive = p1.Inactive,
-                Guid = p1.Id
+                Id = p1.Id
             };
         }
         public static TrackableDto AdaptTo(this Trackable p2, TrackableDto p3)
@@ -26,7 +26,7 @@ namespace DTO
             result.Name = p2.Name;
             result.FieldType = p2.FieldType;
             result.Inactive = p2.Inactive;
-            result.Guid = p2.Id;
+            result.Id = p2.Id;
             return result;
             
         }

@@ -1,10 +1,15 @@
 #nullable disable
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
+
 namespace Model
 {
     public class WellbeingDbContext : DbContext
     {
+        public WellbeingDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
         public DbSet<TrackedItem> TrackedItems {get;set;}
         public DbSet<TrackingEntry> TrackingEntries {get;set;}
         public DbSet<User> Users {get;set;}

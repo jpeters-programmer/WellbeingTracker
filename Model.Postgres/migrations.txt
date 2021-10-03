@@ -1,2 +1,11 @@
-dotnet ef migrations add {name}
-dotnet tool update --global dotnet-ef
+setup:
+    we always run migrations against the last deployed version of the schema.  run the docker-compose.yaml in ./Docker to get it locally
+    run the command line (dotnet ef migrations add {name})
+    that command line will look at our WellbeingDevContextProvider to retrieve the dbcontext, which is setup to point to your local version of the schema
+    migrations are automatically run by host programs
+    when you pull down new migrations from other devs, if you need to apply them without running a host, you can use dotnet ef update database
+
+common commands:
+    dotnet ef migrations add {name}
+    dotnet ef update database
+    dotnet tool update --global dotnet-ef    
